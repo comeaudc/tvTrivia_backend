@@ -61,10 +61,10 @@
 
 ### Practice Server
 ### Dependencies
--   express
--   mongoose
--   dotenv
--   nodemon
+-   ✅ express
+-   ✅ mongoose
+-   ✅ dotenv
+-   ✅ nodemon
 -   cors (not necessary now, but when we connect front to back we will need it)
 
 ### Middleware
@@ -74,8 +74,8 @@
 
 
 ### Env Variable
--   PORT
--   mongoURI
+-   ✅ PORT
+-   ✅ mongoURI
 
 ### Collections/Schemas
 -   Questions
