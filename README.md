@@ -68,9 +68,9 @@
 -   cors (not necessary now, but when we connect front to back we will need it)
 
 ### Middleware
-- Global Err handling
-- Logging middleware
-- Parsing Middleware - express.json()
+- ✅ Global Err handling
+- ✅ Logging middleware
+- ✅ Parsing Middleware - express.json()
 
 
 ### Env Variable
