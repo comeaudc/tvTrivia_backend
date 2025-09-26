@@ -46,9 +46,11 @@
 - POST create new category
 
 ### Question Routes
-- GET question(s) by category/theme
+- GET All question(s) 
+- GET Questions by category
 - POST create question(s) route (admin middleware)
 - DELETE question(s) route (admin middleware)
+- DELETE questions by category
 - PUT/PATCH edit question route (admin middleware)
 
 ### Game Routes
@@ -78,6 +80,6 @@
 -   ✅ mongoURI
 
 ### Collections/Schemas
--   Questions
--   Users
--   Game
+-   ✅ Questions
+-   ✅ Users
+-   ✅ Game
