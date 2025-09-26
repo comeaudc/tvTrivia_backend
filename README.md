@@ -83,3 +83,11 @@
 -   ✅ Questions
 -   ✅ Users
 -   ✅ Game
+
+
+### Git Commands for this project
+-   `git clone <url>` - clone legacy code repo
+-   `git checkout -b <new-branch-name>` - created new branch and switched to it
+-   `git branch` - allows us to view all branches
+-   `git checkout <branch-name>` - switch branches
+-   `git pull origin main` - pulls changes from github to your local main branch
