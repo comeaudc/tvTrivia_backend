@@ -5,18 +5,23 @@ import Category from "../models/categorySchema.mjs";
 let createNewQuestion = async (req, res) => {
   try {
     const { categoryId, questionText, correctAnswer, options } = req.body;
+
     if (!categoryId || !questionText || !correctAnswer) {
       return res.status(400).json({
         msg: `Fields "categoryId", "questionText", "correctAnswer" are required`,
       });
     }
+
     const category = await Category.findById(categoryId);
+
     if (!category) {
       return res.status(404).json({
         msg: `The categoryId with value "${categoryId}" does not exist`,
       });
     }
+
     const question = await Question.create(req.body);
+
     res.status(201).json(question);
   } catch (error) {
     console.error(`❌ Error :`, error.message);
@@ -88,7 +93,7 @@ const deleteQuestionById = async (req, res) => {
 const deleteQuestionsByCategory = async (req, res) => {
   try {
     let deleteCategory = await Question.deleteMany({
-      categoryId: req.params.id,
+      categoryId: req.params.categoryId,
     });
     res.json({ msg: "Category deleted", deleteCategory });
   } catch (error) {
