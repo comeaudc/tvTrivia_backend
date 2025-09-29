@@ -46,8 +46,8 @@
 
 
 Group1
-- GET Questions by category
-- POST create question(s) route (admin middleware)
+- ✅ GET Questions by category
+- ✅ POST create question(s) route (admin middleware)
     -   Get categoryID from category
     -   See if categoryID exists
     -   if it doesnt create a new
@@ -55,21 +55,21 @@ Group1
     -   save to db
 
 Group2
-- DELETE question(s) route (admin middleware)
-- DELETE questions by category (admin middleware)
+- ✅ DELETE question(s) route (admin middleware)
+- ✅ DELETE questions by category (admin middleware)
 
 Group3
-- GET All question(s)
-- PUT/PATCH edit question route (admin middleware)
+- ✅ GET All question(s)
+- ✅ PUT/PATCH edit question route (admin middleware)
 
 # Category Routes
 Group4
-- Get All Categories
-- PUT/PATCH categories (admin middleware)
+- ✅ Get All Categories
+- ✅ PUT/PATCH categories (admin middleware)
 
 Group5
-- POST create category
-- DELETE categories
+- ✅ POST create category
+- ✅ DELETE categories
 
 ### Game Routes
 - POST create new game
