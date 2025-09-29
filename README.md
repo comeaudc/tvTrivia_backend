@@ -31,9 +31,6 @@
 -   Admin
 -   Guest
 
-
-
-
 ### User Routes
  - POST create a user account
  - POST login user
@@ -46,12 +43,33 @@
 - POST create new category
 
 ### Question Routes
-- GET All question(s) 
+
+
+Group1
 - GET Questions by category
 - POST create question(s) route (admin middleware)
+    -   Get categoryID from category
+    -   See if categoryID exists
+    -   if it doesnt create a new
+    -   take category ID add it to question object
+    -   save to db
+
+Group2
 - DELETE question(s) route (admin middleware)
-- DELETE questions by category
+- DELETE questions by category (admin middleware)
+
+Group3
+- GET All question(s)
 - PUT/PATCH edit question route (admin middleware)
+
+# Category Routes
+Group4
+- Get All Categories
+- PUT/PATCH categories (admin middleware)
+
+Group5
+- POST create category
+- DELETE categories
 
 ### Game Routes
 - POST create new game
@@ -70,9 +88,9 @@
 -   cors (not necessary now, but when we connect front to back we will need it)
 
 ### Middleware
-- ✅ Global Err handling
-- ✅ Logging middleware
-- ✅ Parsing Middleware - express.json()
+-   ✅ Global Err handling
+-   ✅ Logging middleware
+-   ✅ Parsing Middleware - express.json()
 
 
 ### Env Variable
@@ -83,6 +101,7 @@
 -   ✅ Questions
 -   ✅ Users
 -   ✅ Game
+-   ✅ Category
 
 
 ### Git Commands for this project
