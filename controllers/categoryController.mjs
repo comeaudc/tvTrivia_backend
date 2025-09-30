@@ -23,7 +23,7 @@ const createCategory = async (req, res) => {
   }
 };
 
-// Get All Categories
+// Get All Categories ----------------------------
 const getAllCategories = async (req, res) => {
   try {
     let allCategory = await Category.find({});

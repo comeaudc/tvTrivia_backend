@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+// Collections/Models
 import Category from "../models/categorySchema.mjs";
 import Question from "../models/questionSchema.mjs";
 
+// Data
 import categories from "./categoriesData.mjs";
 import questions from "./questionData.mjs";
 
@@ -33,6 +35,7 @@ async function seedDatabase() {
         }
       }
     }
+    
     console.log(`✅ Mapped new questions with new categoryID`)
 
     await Question.deleteMany();

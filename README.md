@@ -72,12 +72,30 @@ Group5
 - ✅ DELETE categories
 
 ### Game Routes
+
+Group1
+- GET current/past game information by userID (order from newest to oldest)(limit(10))
+
+Group2
+- GET top scores by category (limit(10))
+
+Group3
 - POST create new game
+
+GRoup4
+- GET top scores (limit(10))
+
+Group5
 - PUT update/end game
+
+Group6
+- DELETE game by id
+
+Group7
+- DELETE by Category
+
+
 - ?PUT check questions speed
-- GET current/past game information
-- GET top scores
-- DELETE games
 
 ### Practice Server
 ### Dependencies

@@ -1,7 +1,5 @@
 import { Router } from "express";
 import questionCTRL from "../controllers/questionController.mjs";
-import Question from "../models/questionSchema.mjs";
-import Category from "../models/categorySchema.mjs";
 
 const router = Router();
 
