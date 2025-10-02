@@ -32,20 +32,18 @@
 -   Guest
 
 ### User Routes
- - POST create a user account
+ - POST regiater/create a user account
  - POST login user
  - GET Profile information / stats
+
+ 
  - PUT update user profile (pw, username, img)
  - DELETE user (both admin and user)
 
 ### Admin Routes
 - GET all Users account
-- POST create new category
 
 ### Question Routes
-
-
-Group1
 - ✅ GET Questions by category
 - ✅ POST create question(s) route (admin middleware)
     -   Get categoryID from category
@@ -53,46 +51,25 @@ Group1
     -   if it doesnt create a new
     -   take category ID add it to question object
     -   save to db
-
-Group2
 - ✅ DELETE question(s) route (admin middleware)
 - ✅ DELETE questions by category (admin middleware)
-
-Group3
 - ✅ GET All question(s)
 - ✅ PUT/PATCH edit question route (admin middleware)
 
 # Category Routes
-Group4
 - ✅ Get All Categories
 - ✅ PUT/PATCH categories (admin middleware)
-
-Group5
 - ✅ POST create category
 - ✅ DELETE categories
 
 ### Game Routes
-
-Group1
-- GET current/past game information by userID (order from newest to oldest)(limit(10))
-
-Group2
-- GET top scores by category (limit(10))
-
-Group3
-- POST create new game
-
-GRoup4
-- GET top scores (limit(10))
-
-Group5
-- PUT update/end game
-
-Group6
-- DELETE game by id
-
-Group7
-- DELETE by Category
+- ✅ GET current/past game information by userID (order from newest to oldest)(limit(10))
+- ✅ GET top scores by category (limit(10))
+- ✅ POST create new game
+- ✅ GET top scores (limit(10))
+- ✅ PUT update/end game
+- ✅ DELETE game by id
+- ✅ DELETE by Category
 
 
 - ?PUT check questions speed
@@ -128,3 +105,11 @@ Group7
 -   `git branch` - allows us to view all branches
 -   `git checkout <branch-name>` - switch branches
 -   `git pull origin main` - pulls changes from github to your local main branch
+
+### Todays Steps:
+1.  install dependencies
+2.  create use.auth routes pages
+3.  creating register route
+4.  create login route
+5.  create middleware
+6.  create an auth route

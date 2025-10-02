@@ -5,6 +5,7 @@ import { globalErr, log } from "./middleware/middleware.mjs";
 import connectDB from "./db/conn.mjs";
 import questionRoutes from "./routes/questionRoutes.mjs";
 import categoryRoutes from "./routes/categoryRoutes.mjs";
+import gameRoutes from "./routes/gameRoutes.mjs";
 
 // Setups
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(log);
 // Routes
 app.use("/api/question", questionRoutes);
 app.use("/api/category", categoryRoutes);
+app.use("/api/game", gameRoutes);
 
 // Global Err Handling
 app.use(globalErr);
