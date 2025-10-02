@@ -6,6 +6,8 @@ import connectDB from "./db/conn.mjs";
 import questionRoutes from "./routes/questionRoutes.mjs";
 import categoryRoutes from "./routes/categoryRoutes.mjs";
 import gameRoutes from "./routes/gameRoutes.mjs";
+import userRoutes from "./routes/userRoutes.mjs";
+import authRoutes from "./routes/authRoutes.mjs";
 
 // Setups
 dotenv.config();
@@ -23,6 +25,8 @@ app.use(log);
 app.use("/api/question", questionRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/game", gameRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
 
 // Global Err Handling
 app.use(globalErr);
