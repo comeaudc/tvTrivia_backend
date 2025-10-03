@@ -32,9 +32,9 @@
 -   Guest
 
 ### User Routes
- - POST regiater/create a user account
- - POST login user
- - GET Profile information / stats
+ - ✅ POST register/create a user account
+ - ✅ POST login user
+ - ✅ GET Profile information / stats
 
  
  - PUT update user profile (pw, username, img)

@@ -1,5 +1,7 @@
 import { Router } from "express";
 import questionCTRL from "../controllers/questionController.mjs";
+import auth from '../middleware/basicAuth.mjs';
+import adminAuth from "../middleware/adminAuth.mjs";
 
 const router = Router();
 
@@ -8,7 +10,7 @@ router
   .route("/")
   // @desc POST Create new question
   // @access Admin
-  .post(questionCTRL.createNewQuestion)
+  .post(auth, adminAuth, questionCTRL.createNewQuestion)
   // @desc GET all questions
   // @access Public
   .get(questionCTRL.getAllQuestions);
@@ -18,10 +20,10 @@ router
   .route("/:id")
   // @desc: Update a question
   // @access: Admin
-  .put(questionCTRL.updateQuestion)
+  .put(auth, adminAuth, questionCTRL.updateQuestion)
   // @desc: DELETE questions by ID
   // @access: Admin
-  .delete(questionCTRL.deleteQuestionById);
+  .delete(auth, adminAuth, questionCTRL.deleteQuestionById);
 
 // @route: /api/question/category/:categoryId
 router
@@ -31,6 +33,6 @@ router
   .get(questionCTRL.getQuestionByCategory)
   // @desc: DELETE category
   // @access: Admin
-  .delete(questionCTRL.deleteQuestionsByCategory);
+  .delete(auth, adminAuth, questionCTRL.deleteQuestionsByCategory);
 
 export default router;
