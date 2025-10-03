@@ -1,25 +1,26 @@
 import Game from "../models/gameSchema.mjs";
 import Category from "../models/categorySchema.mjs";
+import User from "../models/userSchema.mjs";
 
 // Start New Game --------------------------
 const startGame = async (req, res) => {
   try {
-    const { user, categoryID, score, completed } = req.body;
-    if (!user || !categoryID || !score) {
+    const { user, categoryId, score, completed } = req.body;
+    if (!user || !categoryId || !score) {
       return res
         .status(400)
         .json({ msg: `Missing input value (user, categoryID and/or score)` });
     }
 
-    const existingCategory = await Category.findOne({ _id: categoryID });
+    const existingCategory = await Category.findOne({ _id: categoryId });
 
     if (!existingCategory) {
       return res
         .status(400)
-        .json({ msg: `Category Id: ${categoryID} not found in database` });
+        .json({ msg: `Category Id: ${categoryId} not found in database` });
     }
 
-    const existingUser = await User.findOne({ _id: user });
+    const existingUser = await User.findById( user );
 
     if (!existingUser) {
       return res
@@ -29,7 +30,7 @@ const startGame = async (req, res) => {
 
     let newGame = await Game.create({
       user: user,
-      categoryID: categoryID,
+      categoryID: categoryId,
       score: score,
       completed: completed,
     });
@@ -59,8 +60,13 @@ const getTopAllTime = async (req, res) => {
 const topByCategory = async (req, res) => {
   try {
     const category = req.params.id;
-    const score = await Game.find({ category: category }).sort(-1).limit(10);
-    if (!category) res.status(404).json({ msg: "Category not found" });
+
+    const score = await Game.find({ category: category })
+      .sort({ score: -1 })
+      .limit(10);
+
+    if (!score) res.status(404).json({ msg: "Category not found" });
+
     res.json(score);
   } catch (err) {
     console.error(err.message);
@@ -134,18 +140,18 @@ const deleteGame = async (req, res) => {
 };
 
 const getGameById = async (req, res) => {
-    try {
-      let currentgame = await Game.findById(req.params.id);
+  try {
+    let currentgame = await Game.findById(req.params.id);
 
-      if (!currentgame)
-        return res.status(400).json({ errors: [{ msg: "No game found" }] });
+    if (!currentgame)
+      return res.status(400).json({ errors: [{ msg: "No game found" }] });
 
-      res.json(currentgame);
-    } catch (err) {
-      console.error(err.message);
-      res.status(err.status || 500).json({ errors: [{ msg: "Server Error" }] });
-    }
+    res.json(currentgame);
+  } catch (err) {
+    console.error(err.message);
+    res.status(err.status || 500).json({ errors: [{ msg: "Server Error" }] });
   }
+};
 
 export default {
   startGame,
@@ -155,5 +161,5 @@ export default {
   topByUser,
   updateGame,
   deleteGame,
-  getGameById
+  getGameById,
 };
