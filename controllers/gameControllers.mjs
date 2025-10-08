@@ -11,6 +11,7 @@ const startGame = async (req, res) => {
         .status(400)
         .json({ msg: `Missing input value (user, categoryID and/or score)` });
     }
+    console.log('testing')
 
     const existingCategory = await Category.findOne({ _id: categoryId });
 
@@ -30,7 +31,7 @@ const startGame = async (req, res) => {
 
     let newGame = await Game.create({
       user: user,
-      categoryID: categoryId,
+      categoryId: categoryId,
       score: score,
       completed: completed,
     });

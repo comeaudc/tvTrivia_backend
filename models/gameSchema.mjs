@@ -29,6 +29,7 @@ const gameSchema = new mongoose.Schema(
         message: (props) =>
           `This category with ${props.path}:${props.value} does not exist`,
       },
+      required: true
     },
     score: {
       type: Number,

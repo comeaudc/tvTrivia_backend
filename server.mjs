@@ -8,6 +8,7 @@ import categoryRoutes from "./routes/categoryRoutes.mjs";
 import gameRoutes from "./routes/gameRoutes.mjs";
 import userRoutes from "./routes/userRoutes.mjs";
 import authRoutes from "./routes/authRoutes.mjs";
+import cors from "cors";
 
 // Setups
 dotenv.config();
@@ -20,6 +21,7 @@ connectDB();
 // Middleware
 app.use(express.json());
 app.use(log);
+app.use(cors());
 
 // Routes
 app.use("/api/question", questionRoutes);
