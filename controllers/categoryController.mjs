@@ -4,7 +4,7 @@ import Category from "../models/categorySchema.mjs";
 const createCategory = async (req, res) => {
   try {
     const { name, isActive } = req.body;
-    if (!name || isActive) {
+    if (!name) {
       return res.status(400).json({ msg: `Missing name and isActive` });
     }
     const existingCategory = await Category.findOne({ name: name });

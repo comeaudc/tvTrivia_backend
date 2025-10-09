@@ -1,5 +1,7 @@
 import express from "express";
 import categoryCTRL from "../controllers/categoryController.mjs";
+import auth from '../middleware/basicAuth.mjs';
+import adminAuth from '../middleware/adminAuth.mjs';
 
 const router = express.Router();
 
@@ -11,17 +13,17 @@ router
   .get(categoryCTRL.getAllCategories)
   //@Desc:  Create Category
   //@access:    Admin 
-  .post(categoryCTRL.createCategory);
+  .post(auth, adminAuth, categoryCTRL.createCategory);
 
 // @route:  /api/categories/:id
 router
   .route("/:id")
   //@Desc:  DELETE Category
   //@access:    Admin 
-  .delete(categoryCTRL.deleteCategory)
+  .delete(auth, adminAuth, categoryCTRL.deleteCategory)
   //@Desc:  Update Category
   //@access:    Admin 
-  .put(categoryCTRL.updateCategory);
+  .put(auth, adminAuth,categoryCTRL.updateCategory);
 
 
 export default router;
